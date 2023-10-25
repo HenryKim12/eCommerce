@@ -1,15 +1,16 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
-class User(models.Model):
-    firstName = models.CharField(max_length=50)
-    lastName = models.CharField(max_length=50)
-    email = models.CharField(max_length=50, unique=True) # email field
+# class User(models.Model):
+#     firstName = models.CharField(max_length=50)
+#     lastName = models.CharField(max_length=50)
+#     email = models.CharField(max_length=50, unique=True) # email field
 
-class Product(models.Model):
-    name = models.CharField(max_length=50)
-    price = models.IntegerField(null=False)
+# class Product(models.Model):
+#     name = models.CharField(max_length=50)
+#     price = models.IntegerField(null=False)
     # image = models.ImageField()
 
 # class Cart(models.Model):
