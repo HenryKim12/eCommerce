@@ -1,9 +1,6 @@
 from django.db import models
 
 # Create your models here.
-# class Teacher(models.Model):
-#     name = models.CharField(max_length=80)
-#     age = models.IntegerField()
 class Address(models.Model):
     unit_number = models.IntegerField()
     address_line = models.CharField(max_length=64)
@@ -24,8 +21,19 @@ class Category(models.Model):
 class Product(models.Model):
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=64)
-    description = models.CharField(max_length=256)
-    product_image = models.CharField(max_length=256)
+    description = models.CharField(max_length=512)
+    product_image = models.CharField(max_length=512)
+
+class Promotion(models.Model):
+    name = models.CharField(max_length=64)
+    description = models.CharField(max_length=512)
+    discount_rate = models.IntegerField()
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+class Promotion_Category(models.Model):
+    category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
+    promotion_id = models.ForeignKey(Promotion, on_delete=models.CASCADE)
 
 class Cart(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
