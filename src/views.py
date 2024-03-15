@@ -6,3 +6,6 @@ from .models import Product
 def home(request):
     #products = Product.objects.create(name="test")
     return HttpResponse("hello world, this is home")
+
+def user(request):
+    return HttpResponse("make user")
